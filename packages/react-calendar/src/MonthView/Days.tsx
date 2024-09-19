@@ -14,7 +14,6 @@ interface DaysProps {
     showNeighboringMonth?: boolean;
     value?: Date | Date[] | null;
     valueType?: string;
-    // Puedes extender esta interfaz con otros props si es necesario
 }
 
 const Days: FC<DaysProps> = ({
@@ -49,10 +48,8 @@ const Days: FC<DaysProps> = ({
         return daysInMonth;
     })();
 
-    // Estado para detectar si es un teléfono
     const [isPhone, setIsPhone] = useState<boolean>(false);
 
-    // Detección del dispositivo
     useEffect(() => {
         const detectDevice = () => {
             const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera;
@@ -70,7 +67,6 @@ const Days: FC<DaysProps> = ({
         detectDevice();
     }, []);
 
-    // Asegurar que React no sea eliminado por el compilador
     console.log(React.version);
 
     const className = isPhone
