@@ -145,7 +145,7 @@ export type CalendarProps = {
    */
   goToRangeStartOnSelect?: boolean;
   /**
-   *  A prop that behaves like [ref](https://reactjs.org/docs/refs-and-the-dom.html), but it's passed to main `<div>` rendered by `<Calendar>` component.
+   *  A prop that behaves like [ref](https://reactjs.org/docs/refs-and-the-dom.html), but it's passed to main `<div>` rendered by `<PCalendar>` component.
    *
    * @example (ref) => { this.myCalendar = ref; }
    * @example this.ref
@@ -597,8 +597,8 @@ function areDatesEqual(date1?: Date | null, date2?: Date | null) {
   return date1 instanceof Date && date2 instanceof Date && date1.getTime() === date2.getTime();
 }
 
-const Calendar: React.ForwardRefExoticComponent<CalendarProps & React.RefAttributes<unknown>> =
-  forwardRef(function Calendar(props, ref) {
+const PCalendar: React.ForwardRefExoticComponent<CalendarProps & React.RefAttributes<unknown>> =
+  forwardRef(function PCalendar(props, ref) {
     const {
       activeStartDate: activeStartDateProps,
       allowPartialRange,
@@ -1138,4 +1138,4 @@ const Calendar: React.ForwardRefExoticComponent<CalendarProps & React.RefAttribu
     );
   });
 
-export default Calendar;
+export default PCalendar;
